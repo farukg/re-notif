@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-const { string, func, number, shape } = PropTypes;
+const { string, func, number, shape, object } = PropTypes;
 
 /**
  * A single notification component
@@ -115,6 +115,10 @@ Notif.propTypes = {
    * The notification message
    */
   message: PropTypes.string.isRequired,
+  /*
+   * An optional message object to use in a CustomComponent
+   */
+  messageObject: object,
 
   /**
    * The message kind to render, this affects the styling of the notification.
