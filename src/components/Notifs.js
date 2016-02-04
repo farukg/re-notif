@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import TransitionGroup from 'react/lib/ReactCSSTransitionGroup';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group');
 import classnames from 'classnames';
 
 const getter = (obj, propName) => {return obj.get ? obj.get(propName) : obj[propName]};
@@ -20,16 +20,16 @@ class Notifs extends Component {
 
     const items = notifs.map((notif) => {
       return (
-        <Notif key={getter(notif, 'id')} message={getter(notif, 'message')} kind={getter(notif, 'kind')} theme={theme} CustomComponent={CustomComponent}/>
+        <Notif key={getter(notif, 'id')} message={getter(notif, 'message')} messageObject={getter(notif, 'messageObject')} kind={getter(notif, 'kind')} theme={theme} CustomComponent={CustomComponent}/>
       );
     });
 
     const componentStyles = forceNotifsStyles || !theme ? styles : {};
     return (
       <div className={classnames('notif-container', className)} style={componentStyles}>
-        <TransitionGroup transitionName="notif">
+        <ReactCSSTransitionGroup transitionName="notif">
           {items}
-        </TransitionGroup>
+        </ReactCSSTransitionGroup>
       </div>
     );
   }

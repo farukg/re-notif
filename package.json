@@ -7,7 +7,7 @@
     "build:lib": "BABEL_ENV=production babel src --out-dir lib",
     "build:demo": "rimraf ./dist_demo && cd demo && webpack -p && mv dist_demo ../"
   },
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/indexiatech/re-notif.git"
@@ -24,7 +24,8 @@
   "peerDependencies": {
     "redux": "^2.0.0 || ^3.0.0",
     "react-redux": "^2.0.0 || ^3.1.0 || ^4.0.0",
-    "react": "^0.13.3 || ^0.14.0"
+    "react": "^0.13.3 || ^0.14.0",
+    "react-addons-css-transition-group": "^0.14.7"
   },
   "devDependencies": {
     "babel": "^5.8.23",
